@@ -1,66 +1,76 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: bisque;
+    font-family: Arial, sans-serif
 }
 
-.container {
+.container{
+    /* border: 1px solid black; */
     text-align: center;
 }
 
-h1 {
+h1{
     margin-bottom: 2rem;
 }
 
-.tiles {
+.tiles{
     display: grid;
-    grid-template-columns: repeat(5, 160px);
+    grid-template-columns: repeat(5,160px);
     gap: 1rem;
     justify-content: center;
 }
 
-.tile {
+.tile{
     position: relative;
     width: 160px;
     height: 160px;
     perspective: 1000px;
 }
 
-.card {
+.card{
     width: 100%;
     height: 100%;
     transition: transform 0.6s;
-    transform-style: preserve-3d;
+    transition-delay: preserve-3d;
     cursor: pointer;
+    /* transform: rotateY(180deg);  */
 }
 
-.tile:hover .card {
+/* Add this to your existing CSS */
+.card.is-flipped {
     transform: rotateY(180deg);
 }
+
 
 .front-face, .back-face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
     border-radius: 10px;
+    backface-visibility: hidden;
 }
 
+
 .front-face {
-    background-color: #fff;
+    background-color: #d36262;
+    border: 1px solid black;
+    /* display: none; */
 }
+
+
 
 .back-face {
     background-color: #f8f8f8;
+    border: 1px solid blue;
     transform: rotateY(180deg); 
 }
 
@@ -70,3 +80,4 @@ img {
     border-radius: 10px;
     object-fit: cover;
 }
+
