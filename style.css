@@ -38,7 +38,71 @@ h1{
     height: 160px;
     perspective: 1000px;
 }
+/* Add this CSS to style.css
 
+.card {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card .front-face,
+.card .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .back-face {
+    transform: rotateY(180deg);
+}
+ */
+
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.back-face {
+    background-color: #f8f8f8;
+    border: 1px solid blue;
+    /* transform: rotateY(180deg);  */
+}
+
+
+
+/*
 .card{
     position: relative;
     width: 100%;
@@ -46,7 +110,6 @@ h1{
     transition: transform 0.6s;
     transition-delay: preserve-3d;
     cursor: pointer;
-    /* transform: rotateY(180deg);  */
 }
 
 
@@ -58,25 +121,16 @@ h1{
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    /* backface-visibility: hidden; */
 }
 
 
 .front-face {
     background-color: #d36262;
     border: 1px solid black;
-    /* transform: rotateY(180deg);  */
-
-    /* display: none; */
 }
+*/
 
 
-
-.back-face {
-    background-color: #f8f8f8;
-    border: 1px solid blue;
-    /* transform: rotateY(180deg);  */
-}
 
 img {
     width: 100%;
@@ -88,7 +142,7 @@ img {
 .score-board{
     display: flex;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .stopwatch{
