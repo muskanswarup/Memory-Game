@@ -22,20 +22,6 @@ let timer = true;
 let isPaused = false;
 let minute = 0;
 let second = 0;
-let millisecond = 0;
-
-// function togglePause() {
-//     if (isPaused) {
-//         timer = true;
-//         isPaused = false;
-//         pauseBtn.innerText = "PAUSE";
-//         runTimer();
-//     } else {
-//         timer = false;
-//         isPaused = true;
-//         pauseBtn.innerText = "RESUME";
-//     }
-// }
 
 function togglePause() {
     if (timer) {
@@ -153,22 +139,6 @@ function checkGameCompleted() {
     }
 }
 
-
-// function checkGameCompleted() {
-//     if (matchedCards === cards.length) {
-//         console.log("Game completed");
-//         togglePause(); // Pause the game
-        
-//         let div = document.createElement("div");
-//         div.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // Transparent black background
-//         div.style.width = "100%";
-//         div.style.color = "white";
-//         div.innerText = `Final Score: ${totalPoints}`;
-
-//         score.appendChild(div); // Append the div element to the score element
-//     }
-// }
-
 function shuffleCards() {
     tiles.forEach(tile => {
         let randomPos = Math.floor(Math.random() * tiles.length);
@@ -219,4 +189,3 @@ pauseBtn.addEventListener("click", () => {
     console.log("You clicked PAUSE/RESUME button");
     togglePause();
 });
-

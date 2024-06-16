@@ -73,7 +73,6 @@ img{
 .back-face {
     background-color: #f8f8f8;
     border: 1px solid palevioletred;
-    /* transform: rotateY(180deg);  */
 }
 
 img {
@@ -117,7 +116,37 @@ button{
 }
 
 button:hover{
-    /* opacity: 0.5; */
     background-color: #454372;
     color: burlywood;
+}
+
+/*  Responsive */
+
+/* Ensure that the game board is responsive */
+.game-board .col-6 {
+    padding: 5px;
+}
+
+@media (min-width: 576px) {
+    .game-board .col-6 {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-board .col-sm-4 {
+        max-width: 33.3333%;
+    }
+}
+
+@media (min-width: 992px) {
+    .game-board .col-md-3 {
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .game-board .col-lg-2 {
+        max-width: 16.6667%;
+    }
 }
