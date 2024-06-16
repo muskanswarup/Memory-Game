@@ -22,6 +22,7 @@ let timer = true;
 let isPaused = false;
 let minute = 0;
 let second = 0;
+let millisecond = 0;
 
 function togglePause() {
     if (timer) {
