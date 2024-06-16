@@ -24,18 +24,32 @@ let minute = 0;
 let second = 0;
 let millisecond = 0;
 
+// function togglePause() {
+//     if (isPaused) {
+//         timer = true;
+//         isPaused = false;
+//         pauseBtn.innerText = "PAUSE";
+//         runTimer();
+//     } else {
+//         timer = false;
+//         isPaused = true;
+//         pauseBtn.innerText = "RESUME";
+//     }
+// }
+
 function togglePause() {
-    if (isPaused) {
+    if (timer) {
+        timer = false;
+        isPaused = true;
+        pauseBtn.innerText = "RESUME";
+    } else {
         timer = true;
         isPaused = false;
         pauseBtn.innerText = "PAUSE";
         runTimer();
-    } else {
-        timer = false;
-        isPaused = true;
-        pauseBtn.innerText = "RESUME";
     }
 }
+
 
 
 function resetGame() {
@@ -131,15 +145,29 @@ function checkGameCompleted() {
         console.log("Game completed");
         togglePause(); // Pause the game
         
-        let div = document.createElement("div");
-        div.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // Transparent black background
-        div.style.width = "100%";
-        div.style.color = "white";
-        div.innerText = `Final Score: ${totalPoints}`;
-
-        score.appendChild(div); // Append the div element to the score element
+        // Set the final score text
+        document.getElementById("finalScore").innerText = `Final Score: ${totalPoints}`;
+        
+        // Show the modal
+        $('#scoreModal').modal('show');
     }
 }
+
+
+// function checkGameCompleted() {
+//     if (matchedCards === cards.length) {
+//         console.log("Game completed");
+//         togglePause(); // Pause the game
+        
+//         let div = document.createElement("div");
+//         div.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // Transparent black background
+//         div.style.width = "100%";
+//         div.style.color = "white";
+//         div.innerText = `Final Score: ${totalPoints}`;
+
+//         score.appendChild(div); // Append the div element to the score element
+//     }
+// }
 
 function shuffleCards() {
     tiles.forEach(tile => {
