@@ -8,6 +8,7 @@ const pauseBtn = document.querySelector("#pause");
 const startBtn = document.querySelector("#start");
 const stopwatch = document.querySelector(".stopwatch");
 const score = document.querySelector(".score");
+const finalScore = document.querySelector("#finalScore");
 
 console.log("YOu working?");
 
@@ -132,7 +133,7 @@ function checkGameCompleted() {
         console.log("Game completed");
         togglePause(); // Pause the game
         
-        // Set the final score text
+          // Set the final score text
         document.getElementById("finalScore").innerText = `Final Score: ${totalPoints}`;
         
         // Show the modal
